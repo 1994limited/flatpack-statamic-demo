@@ -88,4 +88,4 @@ Reading it: the deeper the page builders and the bigger the site, the more Flatp
 
 ## Licence
 
-The demo's own code (templates, styles, content generator and scripts) is MIT licensed: see [LICENSE.md](LICENSE.md). Flatpack itself is commercial software with its own licence.
+The demo's own code (templates, styles, content generator and scripts) is MIT licensed: see [LICENSE.md](LICENSE.md). Flatpack itself is free and MIT licensed too.
