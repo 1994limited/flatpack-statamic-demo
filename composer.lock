@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:1994limited/flatpack-statamic.git",
-                "reference": "31e2f54583071e35b907ceb8b37853c79f9bcb19"
+                "reference": "6bd00db63a0d0981ae39900571b1d027fe69167d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1994limited/flatpack-statamic/zipball/31e2f54583071e35b907ceb8b37853c79f9bcb19",
-                "reference": "31e2f54583071e35b907ceb8b37853c79f9bcb19",
+                "url": "https://api.github.com/repos/1994limited/flatpack-statamic/zipball/6bd00db63a0d0981ae39900571b1d027fe69167d",
+                "reference": "6bd00db63a0d0981ae39900571b1d027fe69167d",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 }
             },
             "license": [
-                "proprietary"
+                "MIT"
             ],
             "authors": [
                 {
@@ -73,7 +73,7 @@
                 "docs": "https://github.com/1994limited/flatpack-statamic/tree/main/docs",
                 "source": "https://github.com/1994limited/flatpack-statamic/tree/main"
             },
-            "time": "2026-11-06T05:02:45+00:00"
+            "time": "2026-11-06T05:42:53+00:00"
         },
         {
             "name": "ajthinking/archetype",
