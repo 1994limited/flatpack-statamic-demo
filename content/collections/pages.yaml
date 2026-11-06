@@ -1,0 +1,10 @@
+title: Pages
+sites:
+  - en
+  - fr
+  - de
+propagate: false
+route: '{parent_uri}/{slug}'
+structure:
+  root: true
+  max_depth: 3

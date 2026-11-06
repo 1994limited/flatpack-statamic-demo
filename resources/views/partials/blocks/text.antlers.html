@@ -1,0 +1,8 @@
+<section class="block text">
+    {{ if heading }}<h2>{{ heading }}</h2>{{ /if }}
+    {{ text }}
+        {{ if type == "text" }}{{ text }}{{ /if }}
+        {{ if type == "pullquote" }}<blockquote class="pull">{{ quote }}</blockquote>{{ /if }}
+        {{ if type == "fact" }}<dl class="facts">{{ rows }}<dt>{{ label }}</dt><dd>{{ value }}</dd>{{ /rows }}</dl>{{ /if }}
+    {{ /text }}
+</section>

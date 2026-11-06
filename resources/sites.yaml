@@ -1,0 +1,12 @@
+en:
+  name: English
+  url: /
+  locale: en_GB
+fr:
+  name: Français
+  url: /fr/
+  locale: fr_FR
+de:
+  name: Deutsch
+  url: /de/
+  locale: de_DE

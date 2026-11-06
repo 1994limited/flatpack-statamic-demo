@@ -1,0 +1,40 @@
+title: Post
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: writer
+            field:
+              type: text
+          -
+            handle: summary
+            field:
+              type: textarea
+          -
+            import: page_builder
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: subjects
+            field:
+              type: terms
+              taxonomies: [subjects]
+          -
+            handle: slug
+            field:
+              type: slug
+          -
+            handle: date
+            field:
+              type: date

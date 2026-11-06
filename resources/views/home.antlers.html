@@ -1,0 +1,14 @@
+<section class="hero">
+    <h1>{{ title }}</h1>
+    <p>{{ intro }}</p>
+</section>
+<h2>New on the shelves</h2>
+<div class="grid">
+    {{ collection:books sort="year:desc|title" limit="8" }}{{ partial:book_card }}{{ /collection:books }}
+</div>
+<h2>From the journal</h2>
+<div class="posts">
+    {{ collection:journal limit="3" }}{{ partial:post_card }}{{ /collection:journal }}
+</div>
+<h2>Browse by subject</h2>
+<p class="tags">{{ taxonomy:subjects }}<a href="{{ url }}">{{ title }}</a> {{ /taxonomy:subjects }}</p>

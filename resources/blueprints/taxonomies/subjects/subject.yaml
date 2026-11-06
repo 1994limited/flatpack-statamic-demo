@@ -1,0 +1,19 @@
+title: Subject
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+          -
+            handle: description
+            field:
+              type: textarea
+          -
+            handle: slug
+            field:
+              type: slug

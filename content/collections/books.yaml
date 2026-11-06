@@ -1,0 +1,12 @@
+title: Books
+sites:
+  - en
+  - fr
+  - de
+propagate: false
+route: '/books/{slug}'
+template: books/show
+sort_by: title
+taxonomies:
+  - authors
+  - subjects

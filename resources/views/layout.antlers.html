@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }} · {{ shop:shop_name }}</title>
+    <link rel="stylesheet" href="/demo.css">
+</head>
+<body>
+    <header class="top">
+        <a class="brand" href="{{ link to="/" }}">{{ shop:shop_name }}</a>
+        <nav>
+            {{ nav:main }}<a href="{{ url }}" {{ if is_current || is_parent }}class="on"{{ /if }}>{{ title }}</a>{{ /nav:main }}
+        </nav>
+        <nav class="sites">
+            {{ locales all="true" }}<a href="{{ url ?? homepage }}" {{ if current }}class="on"{{ /if }}>{{ short_locale | upper }}</a>{{ /locales }}
+        </nav>
+    </header>
+    <main>{{ template_content }}</main>
+    <footer>
+        <p>{{ shop:shop_name }}, {{ shop:address | nl2br }}</p>
+        <ul>{{ shop:opening_hours }}<li>{{ days }}: {{ hours }}</li>{{ /shop:opening_hours }}</ul>
+        <p class="note">A made-up shop, for trying <a href="https://github.com/1994limited/flatpack-statamic">Flatpack for Statamic</a>.</p>
+    </footer>
+</body>
+</html>

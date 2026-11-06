@@ -1,0 +1,28 @@
+title: Shop
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: shop_name
+            field:
+              type: text
+          -
+            handle: address
+            field:
+              type: textarea
+          -
+            handle: opening_hours
+            field:
+              type: grid
+              fields:
+                -
+                  handle: days
+                  field:
+                    type: text
+                -
+                  handle: hours
+                  field:
+                    type: text

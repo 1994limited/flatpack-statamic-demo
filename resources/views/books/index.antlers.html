@@ -1,0 +1,6 @@
+<h1>{{ title }}</h1>
+{{ collection:books sort="title" paginate="24" as="books" }}
+    <p class="meta">{{ paginate:total_items }} books</p>
+    <div class="grid">{{ books }}{{ partial:book_card }}{{ /books }}</div>
+    {{ partial:pager }}
+{{ /collection:books }}

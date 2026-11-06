@@ -1,0 +1,210 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page builder'
+      collapse: true
+      sets:
+        blocks:
+          display: Blocks
+          sets:
+            text:
+              display: Text
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                -
+                  handle: text
+                  field:
+                    type: bard
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                      - unorderedlist
+                      - quote
+                    sets:
+                      inline:
+                        display: 'Inside text'
+                        sets:
+                          pullquote:
+                            display: 'Pull quote'
+                            fields:
+                              -
+                                handle: quote
+                                field:
+                                  type: textarea
+                          fact:
+                            display: 'Fact box'
+                            fields:
+                              -
+                                handle: rows
+                                field:
+                                  type: grid
+                                  fields:
+                                    -
+                                      handle: label
+                                      field:
+                                        type: text
+                                    -
+                                      handle: value
+                                      field:
+                                        type: text
+            quote:
+              display: Quote
+              fields:
+                -
+                  handle: quote
+                  field:
+                    type: textarea
+                -
+                  handle: cite
+                  field:
+                    type: text
+            details:
+              display: Details
+              fields:
+                -
+                  handle: rows
+                  field:
+                    type: grid
+                    fields:
+                      -
+                        handle: label
+                        field:
+                          type: text
+                      -
+                        handle: value
+                        field:
+                          type: text
+            shelf:
+              display: 'Shelf of books'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                -
+                  handle: books
+                  field:
+                    type: entries
+                    collections:
+                      - books
+                    max_items: 6
+            section:
+              display: 'Section (columns of blocks)'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                -
+                  handle: background
+                  field:
+                    type: select
+                    options:
+                      - plain
+                      - tinted
+                      - dark
+                -
+                  handle: columns
+                  field:
+                    type: replicator
+                    sets:
+                      columns:
+                        display: Columns
+                        sets:
+                          column:
+                            display: Column
+                            fields:
+                              -
+                                handle: width
+                                field:
+                                  type: select
+                                  options:
+                                    - third
+                                    - half
+                                    - two_thirds
+                                    - full
+                              -
+                                handle: blocks
+                                field:
+                                  type: replicator
+                                  sets:
+                                    blocks:
+                                      display: Blocks
+                                      sets:
+                                        text:
+                                          display: Text
+                                          fields:
+                                            -
+                                              handle: heading
+                                              field:
+                                                type: text
+                                            -
+                                              handle: text
+                                              field:
+                                                type: bard
+                                                buttons:
+                                                  - bold
+                                                  - italic
+                                                  - link
+                                                  - unorderedlist
+                                                  - quote
+                                                sets:
+                                                  inline:
+                                                    display: 'Inside text'
+                                                    sets:
+                                                      pullquote:
+                                                        display: 'Pull quote'
+                                                        fields:
+                                                          - { handle: quote, field: { type: textarea } }
+                                                      fact:
+                                                        display: 'Fact box'
+                                                        fields:
+                                                          - { handle: rows, field: { type: grid, fields: [{ handle: label, field: { type: text } }, { handle: value, field: { type: text } }] } }
+                                        quote:
+                                          display: Quote
+                                          fields:
+                                            -
+                                              handle: quote
+                                              field:
+                                                type: textarea
+                                            -
+                                              handle: cite
+                                              field:
+                                                type: text
+                                        details:
+                                          display: Details
+                                          fields:
+                                            -
+                                              handle: rows
+                                              field:
+                                                type: grid
+                                                fields:
+                                                  -
+                                                    handle: label
+                                                    field:
+                                                      type: text
+                                                  -
+                                                    handle: value
+                                                    field:
+                                                      type: text
+                                        shelf:
+                                          display: 'Shelf of books'
+                                          fields:
+                                            -
+                                              handle: heading
+                                              field:
+                                                type: text
+                                            -
+                                              handle: books
+                                              field:
+                                                type: entries
+                                                collections:
+                                                  - books
+                                                max_items: 6

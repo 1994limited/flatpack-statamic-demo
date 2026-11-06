@@ -1,0 +1,60 @@
+title: Book
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: summary
+            field:
+              type: textarea
+          -
+            import: page_builder
+  details:
+    display: Details
+    sections:
+      -
+        fields:
+          -
+            handle: authors
+            field:
+              type: terms
+              taxonomies: [authors]
+              max_items: 2
+          -
+            handle: subjects
+            field:
+              type: terms
+              taxonomies: [subjects]
+          -
+            handle: isbn
+            field:
+              type: text
+              display: ISBN
+          -
+            handle: format
+            field:
+              type: select
+              options:
+                hardback: Hardback
+                paperback: Paperback
+                audiobook: Audiobook
+          -
+            handle: price
+            field:
+              type: float
+          -
+            handle: year
+            field:
+              type: integer
+              display: 'Year published'
+          -
+            handle: slug
+            field:
+              type: slug

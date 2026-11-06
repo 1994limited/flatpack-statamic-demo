@@ -1,0 +1,5 @@
+<h1>{{ title }}</h1>
+{{ collection:journal paginate="12" as="posts" }}
+    <div class="posts">{{ posts }}{{ partial:post_card }}{{ /posts }}</div>
+    {{ partial:pager }}
+{{ /collection:journal }}

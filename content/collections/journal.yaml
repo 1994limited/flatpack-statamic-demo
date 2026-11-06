@@ -1,0 +1,15 @@
+title: Journal
+sites:
+  - en
+  - fr
+  - de
+propagate: false
+date: true
+date_behavior:
+  past: public
+  future: unlisted
+sort_dir: desc
+route: '/journal/{year}/{slug}'
+template: journal/show
+taxonomies:
+  - subjects

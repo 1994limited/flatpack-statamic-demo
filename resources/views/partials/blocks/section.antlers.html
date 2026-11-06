@@ -1,0 +1,6 @@
+<section class="block section {{ background }}">
+    {{ if heading }}<h2>{{ heading }}</h2>{{ /if }}
+    <div class="cols">
+        {{ columns }}<div class="col {{ width }}">{{ blocks }}{{ partial src="blocks/{type}" }}{{ /blocks }}</div>{{ /columns }}
+    </div>
+</section>
