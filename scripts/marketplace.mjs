@@ -146,19 +146,28 @@ frames['01-build'] = chartScreen('01', 'Builds in a fraction of the time',
 frames['02-memory'] = chartScreen('02', 'A fraction of the memory',
     `Big page builders aren't parsed until a page needs them, so a build that took ${fmt(val('memory', 'nested', 'large', 'statamic'), 'MB')} now fits in ${fmt(val('memory', 'nested', 'large', 'flatpack'), 'MB')}. Room to spare on small servers.`, 'memory');
 
+const deeperRows = [['build', 'Build at deploy', 'faster'], ['memory', 'Build memory', 'less'], ['save', 'Saving an entry', 'faster']];
+const cols = { fixed: 'Fixed fields', builder: 'Page builder', nested: 'Nested builder' };
 frames['03-deeper'] = page(`${brand}
     <div class="copy"><p class="num">03</p><h1>The deeper your page builder, the more it helps</h1><p class="lede">Fixed fields gain a little. Page builders gain a lot. Sections inside columns inside blocks gain the most.</p></div>
     <div class="for" style="left:80px;bottom:56px">For Statamic</div>
-    <div style="position:absolute;left:640px;top:150px;width:880px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start">
-        ${SHAPES.map((s) => `<div class="panel" style="position:relative;padding:30px 28px">
-            <div style="font:26px Gloock,serif;margin-bottom:6px">${{ fixed: 'Fixed fields', builder: 'Page builder', nested: 'Nested builder' }[s]}</div>
-            <div style="font-size:15px;color:#8a8378;margin-bottom:34px">9,000 entries</div>
-            <div style="font-size:16px;color:#57534e">Build</div><div class="stat" style="font-size:${40 + ratio('build', s, 'large') * 12}px;margin:4px 0 26px">${x(ratio('build', s, 'large'))}</div>
-            <div style="font-size:16px;color:#57534e">Memory</div><div class="stat" style="font-size:${40 + ratio('memory', s, 'large') * 6}px;margin:4px 0 26px">${x(ratio('memory', s, 'large'))}</div>
-            <div style="font-size:16px;color:#57534e">Saves</div><div class="stat" style="font-size:${40 + ratio('save', s, 'large') * 10}px;margin:4px 0 0">${x(ratio('save', s, 'large'))}</div>
-        </div>`).join('')}
+    <div class="panel" style="left:600px;top:232px;width:920px;padding:0">
+        <div style="display:grid;grid-template-columns:200px repeat(3,1fr);border-bottom:1px solid #eee7da">
+            <div style="padding:26px 30px;font-size:15px;color:#8a8378;align-self:end">9,000 entries,<br>with Flatpack</div>
+            ${SHAPES.map((sh) => `<div style="padding:26px 24px;border-left:1px solid #eee7da"><div style="font:26px Gloock,serif">${cols[sh]}</div></div>`).join('')}
+        </div>
+        ${deeperRows.map(([k, label, word], ri) => {
+            const top = Math.max(...SHAPES.map((sh) => ratio(k, sh, 'large')));
+            return `<div style="display:grid;grid-template-columns:200px repeat(3,1fr);${ri < 2 ? 'border-bottom:1px solid #eee7da' : ''}">
+                <div style="padding:30px;font-size:18px;color:#57534e;align-self:center">${label}</div>
+                ${SHAPES.map((sh) => { const r = ratio(k, sh, 'large'); return `<div style="padding:26px 24px;border-left:1px solid #eee7da">
+                    <div style="display:flex;align-items:baseline;gap:8px"><span class="stat" style="font-size:56px">${r.toFixed(1)}×</span><span style="font-size:17px;color:#8a8378">${word}</span></div>
+                    <div style="height:10px;background:#f1ebe0;border-radius:5px;margin-top:14px"><div style="height:10px;width:${Math.round((r / top) * 100)}%;background:${brick};border-radius:5px"></div></div>
+                </div>`; }).join('')}
+            </div>`;
+        }).join('')}
     </div>
-    <div class="note" style="left:640px;bottom:40px;width:880px">How many times faster, or how many times less memory, with Flatpack. ${source()}</div>`);
+    <div class="note" style="left:600px;bottom:40px;width:920px">${source('Saves are single measurements.')}</div>`);
 
 frames['04-saves'] = chartScreen('04', 'Saves that don’t wait for the whole site',
     'Saving in the Control Panel writes exactly the same file Statamic does, then updates only what changed in the compiled copy.', 'save', 'Saves are single measurements, so treat them as a direction.');
