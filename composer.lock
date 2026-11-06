@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ad3ad0d077aef053e4353286b88a4ff",
+    "content-hash": "44655c8fea9d9a517d02e0e8d438b13d",
     "packages": [
         {
             "name": "1994/flatpack-statamic",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:1994limited/flatpack-statamic.git",
-                "reference": "6bd00db63a0d0981ae39900571b1d027fe69167d"
+                "url": "https://github.com/1994limited/flatpack-statamic.git",
+                "reference": "86aeb84278e1891923b226e61aa40119dcfc5ec9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1994limited/flatpack-statamic/zipball/6bd00db63a0d0981ae39900571b1d027fe69167d",
-                "reference": "6bd00db63a0d0981ae39900571b1d027fe69167d",
+                "url": "https://api.github.com/repos/1994limited/flatpack-statamic/zipball/86aeb84278e1891923b226e61aa40119dcfc5ec9",
+                "reference": "86aeb84278e1891923b226e61aa40119dcfc5ec9",
                 "shasum": ""
             },
             "require": {
@@ -27,19 +27,18 @@
             "require-dev": {
                 "laravel/pint": "^1.20"
             },
-            "default-branch": true,
             "type": "statamic-addon",
             "extra": {
-                "statamic": {
-                    "name": "Flatpack",
-                    "description": "Compile flat-file content at deploy into PHP files OPcache serves from memory. Content stays in your files.",
-                    "developer": "1994",
-                    "developer-url": "https://1994.co.uk"
-                },
                 "laravel": {
                     "providers": [
                         "NineteenNinetyFour\\Flatpack\\ServiceProvider"
                     ]
+                },
+                "statamic": {
+                    "name": "Flatpack",
+                    "developer": "1994",
+                    "description": "Compile flat-file content at deploy into PHP files OPcache serves from memory. Content stays in your files.",
+                    "developer-url": "https://1994.co.uk"
                 }
             },
             "autoload": {
@@ -47,6 +46,7 @@
                     "NineteenNinetyFour\\Flatpack\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -59,21 +59,21 @@
             ],
             "description": "Compile Statamic's flat-file content at deploy into PHP files OPcache serves from memory. Content stays in your Markdown and YAML files.",
             "keywords": [
+                "Opcache",
                 "cache",
                 "flat file",
-                "opcache",
                 "performance",
                 "stache",
                 "statamic",
                 "statamic-addon"
             ],
             "support": {
+                "docs": "https://github.com/1994limited/flatpack-statamic/tree/main/docs",
                 "email": "hello@1994.co.uk",
                 "issues": "https://github.com/1994limited/flatpack-statamic/issues",
-                "docs": "https://github.com/1994limited/flatpack-statamic/tree/main/docs",
-                "source": "https://github.com/1994limited/flatpack-statamic/tree/main"
+                "source": "https://github.com/1994limited/flatpack-statamic/tree/v1.0.0"
             },
-            "time": "2026-11-06T05:42:53+00:00"
+            "time": "2026-11-06T19:07:30+00:00"
         },
         {
             "name": "ajthinking/archetype",
@@ -12354,9 +12354,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "1994/flatpack-statamic": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

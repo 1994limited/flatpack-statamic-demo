@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "1994/flatpack-statamic": "dev-main",
+        "1994/flatpack-statamic": "^1.0",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
         "statamic/cms": "^6.0"
@@ -94,10 +94,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "repositories": [{
-        "name": "flatpack",
-        "type": "vcs",
-        "url": "https://github.com/1994limited/flatpack-statamic"
-    }]
+    "prefer-stable": true
 }
